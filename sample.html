@@ -3,150 +3,200 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Responsive Navbar</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Case Studies</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
     <style>
-        * {
+        body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  color: #333;
 }
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.navbar {
-  background: white;
-  padding: 1rem 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border-radius: 50px;
-  margin: 20px auto;
-  max-width: 1200px;
-  position: relative;
-  z-index: 1000;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #1e293b;
-}
-
-.logo span {
-  color: #0f172a;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #0f172a;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-  color: #007bff;
-}
-
-.btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.4rem;
-  border-radius: 9999px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background-color: #0066cc;
-}
-
-.menu-icon {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-  margin-left: 1rem;
-}
-
-.menu-icon span {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  border-radius: 3px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    width: 100%;
-    flex-direction: column;
+.card{
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px;
+    padding: 20px;
     align-items: center;
-    display: none;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
-  }
+    flex-direction: column;     
+    justify-content: center;
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 40px;
+    /* background-color: #f9f9f9; */
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+    
+}
 
-  .nav-links.active {
-    display: flex;
-  }
+.case-studies {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
 
-  .menu-icon {
-    display: flex;
+.case-studies-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.case-studies-header h6 {
+  color: #7e7e7e;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.case-studies-header h2 {
+  font-size: 32px;
+  margin: 0 0 20px 0;
+}
+
+.case-studies-header p {
+  max-width: 600px;
+  color: #777;
+  line-height: 1.6;
+}
+
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 250px;
+  gap: 10px;
+}
+
+.case-item {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.case-item .overlay {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.case-item .overlay h5 {
+  margin: 0 0 5px 0;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.case-item .overlay h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.case-dark {
+  background-color: #0b3d3b;
+}
+
+.case-dark .overlay {
+  position: absolute;
+  inset: 0;
+  background: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.case-dark .overlay h5 {
+  color: #aad576;
+}
+
+@media (min-width: 768px) {
+  .case-studies-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
   }
 }
 
     </style>
-  <header class="navbar">
-    <div class="container">
-      <div class="logo">i<span>Landing</span></div>
-      <nav class="nav-links" id="navLinks">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Features</a>
-        <a href="#">Services</a>
-        <a href="#">Pricing</a>
-        <a href="#">Dropdown ▼</a>
-        <a href="#">Contact</a>
-      </nav>
-      <div class="actions">
-        <!-- <button class="btn">Get Started</button> -->
-        <div class="menu-icon" id="menuToggle">
-          <span></span>
-          <span></span>
-          <span></span>
+  <section class="case-studies">
+    <div class="card">
+    <div class="case-studies-header">
+      <!-- <h6>CASE STUDIES</h6> -->
+      <h2>Services</h2>
+      <p>We offer end-to-end professional services that help you stay compliant and financially efficient:</p>
+    </div>
+    <div class="case-studies-grid">
+      <div class="case-item" style="background-image: url('https://via.placeholder.com/600x400?text=Tax+Consultancy');">
+        <div class="overlay">
+          <h5>Tax Consultancy</h5>
+          <h3>
+            Income Tax Return Filing (Individuals, Firms, Companies)<br/>
+            Tax Planning & Advisory<br/>
+            Advance Tax Computation
+          </h3>
+        </div>
+      </div>
+      <div class="case-item" style="background-image: url('https://via.placeholder.com/600x400?text=Accounting');">
+        <div class="overlay">
+          <h5> Accounting & Bookkeeping</h5>
+          <h3>
+            Monthly/Quarterly/Annual Bookkeeping<br/>
+            Preparation of Financial Statements<br/>
+            Cloud-Based Accounting Support (Tally, Zoho, QuickBooks)
+          </h3>
+        </div>
+      </div>
+      <div class="case-item" style="background-image: url('https://via.placeholder.com/600x400?text=GST+Services');">
+        <div class="overlay">
+          <h5> GST Services</h5>
+          <h3>
+            GST Registration<br/>
+            GSTR-1, GSTR-3B, and Annual Return Filing<br/>
+            Reconciliation with GSTR-2B / 2A<br/>
+            GST Advisory & Notices Handling
+          </h3>
+        </div>
+      </div>
+      <div class="case-item case-dark">
+        <div class="overlay">
+          <h5> TDS Compliance</h5>
+          <h3>
+            Monthly TDS Return Filing (Form 24Q, 26Q, etc.)<br/>
+            TDS Payment Support<br/>
+            TDS Correction & Notice Responses
+          </h3>
+        </div>
+      </div>
+      <div class="case-item" style="background-image: url('https://via.placeholder.com/600x400?text=Payroll+HR');">
+        <div class="overlay">
+            <h5> TDS Compliance</h5>
+          <h3>
+            Monthly TDS Return Filing (Form 24Q, 26Q, etc.)<br/>
+            TDS Payment Support<br/>
+            TDS Correction & Notice Responses
+          </h3>
+        </div>
+      </div>
+      <div class="case-item" style="background-image: url('https://via.placeholder.com/600x400?text=Tax+Consultancy');">
+        <div class="overlay">
+          <h5>  Payroll & HR Services</h5>
+          <h3>
+             Monthly Payroll Processing<br/>
+            Payslip Generation & Salary Structuring<br/>
+            PF, ESI, PT Returns Filing<br/>
+            Compliance with Labor Laws
+          </h3>
         </div>
       </div>
     </div>
-  </header>
-
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-
-    menuToggle.onclick = () => {
-      navLinks.classList.toggle('active');
-    };
-  </script>
+    </div>
+  </section>
 </body>
 </html>
