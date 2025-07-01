@@ -6,9 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SAMAT Consulting</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@latest/tsparticles.engine.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@latest/tsparticles.min.js"></script>
+    <link href="assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+
+
+
+
+
+   
+    <!-- ======= Styles =======-->
+    <link href="assets/vendors/bootstrap/bootstrap.min.css" rel="stylesheet">
+     <link href="assets/vendors/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="assets/vendors/glightbox/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- <link href="assets/vendors/aos/aos.css" rel="stylesheet"> -->
+  
+    <!-- End Styles-->
+    
+    <!-- ======= Theme Style =======-->
+    <link href="assets/css/style.css" rel="stylesheet">
+
 
       <link
       rel="stylesheet"
@@ -22,93 +42,112 @@
 
 
 </head>
+ 
+
 
 <body class="bg-white">
-    <header class="absolute inset-x-0 top-0 z-50">
-      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div class="flex lg:flex-1">
-          <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
-            <!-- logo here if needed -->
-          </a>
+    <header class="navbar">
+    <div class="nav-containerr">
+      <div class="logo"><span></span></div>
+     <nav class="nav-links" id="navLinks">
+  <a href="#Home" class="nav-link">Home</a>
+  <a href="#About" class="nav-link">About</a>
+  <a href="#Services" class="nav-link">Services</a>
+  <a href="#Pricing" class="nav-link">Pricing</a>
+  <a href="#Contact" class="nav-link">Contact</a>
+</nav>
+      <div class="actions">
+               <div class="menu-icon" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div class="flex lg:hidden">
-          <button type="button" id="openMenu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-            <span class="sr-only">Open main menu</span>
-            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-          </button>
-        </div>
-        <div class="hidden lg:flex lg:gap-x-12">
-          <a href="#Home" class="text-sm font-semibold text-gray-900">Home</a>
-          <a href="#About" class="text-sm font-semibold text-gray-900">About</a>
-          <a href="#Services" class="text-sm font-semibold text-gray-900">Our Services</a>
-          <a href="#Pricing" class="text-sm font-semibold text-gray-900">Pricing</a>
-          <a href="#contact" class="text-sm font-semibold text-gray-900">Contact</a>
-        </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <!-- optional login -->
-        </div>
-      </nav>
+      </div>
+    </div>
+  </header>
 
-      <!-- Mobile menu -->
-      <div class="lg:hidden hidden" id="mobileMenu" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 z-50 bg-black/20"></div>
-        <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div class="flex items-center justify-between">
-            <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
-              <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-            </a>
-            <button type="button" id="closeMenu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-              <span class="sr-only">Close menu</span>
-              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <div class="mt-6 flow-root">
-            <div class="-my-6 divide-y divide-gray-500/10">
-              <div class="space-y-2 py-6">
-                <a href="#Home" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Home</a>
-                <a href="#About" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">About</a>
-                <a href="#Services" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Our Services</a>
-                <a href="#Pricing" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Pricing</a>
-                <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Contact</a>
+  
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  const nav = document.querySelector('.navbar');
+  const navLinkItems = document.querySelectorAll('.nav-links a');
+
+  // Toggle mobile menu
+  menuToggle.onclick = () => {
+    navLinks.classList.toggle('active');
+  };
+
+  // Close menu on link click (for mobile)
+  navLinkItems.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+
+  // Show/hide navbar on scroll
+  let lastScrollTop = 0;
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      // down scroll
+      nav.style.transform = 'translateY(-120%)';
+    } else {
+      // up scroll
+      nav.style.transform = 'translateY(0)';
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+
+
+ <!-- ======= Hero =======-->
+        <section class="hero__v6 sectionn" id="home">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="row">
+                  <div class="col-lg-11">
+                    <!-- <span class="hero-subtitle text-uppercase" data-aos="fade-up" data-aos-delay="0">Innovative Fintech Solutions</span> -->
+                    <h1 class="hero-title mb-3" data-aos="fade-up" data-aos-delay="100">Simplifying Tax, Accounting & Compliance for Your Growth</h1>
+                    <p class="hero-description mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="200">    Your reliable partner for tax filing, accounting, payroll, and
+                            compliance — so you can focus on your business.</p>
+                    <div class="cta d-flex gap-2 mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="300"><a class="btn" href="#">Get Started Now</a><a class="btn btn-white-outline" href="#">Learn More 
+                        <svg class="lucide lucide-arrow-up-right" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M7 7h10v10"></path>
+                          <path d="M7 17 17 7"></path>
+                        </svg></a></div>
+                    <!-- <div class="logos mb-4" data-aos="fade-up" data-aos-delay="400"><span class="logos-title text-uppercase mb-4 d-block">Trusted by major companies worldwide</span>
+                      <div class="logos-images d-flex gap-4 align-items-center"><img class="img-fluid js-img-to-inline-svg" src="assets/images/logo/actual-size/logo-air-bnb__black.svg" alt="Company 1" style="width: 110px;"><img class="img-fluid js-img-to-inline-svg" src="assets/images/logo/actual-size/logo-ibm__black.svg" alt="Company 2" style="width: 80px;"><img class="img-fluid js-img-to-inline-svg" src="assets/images/logo/actual-size/logo-google__black.svg" alt="Company 3" style="width: 110px;"></div>
+                    </div> -->
+                  </div>
+                </div>
               </div>
-              <div class="py-6">
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
+              <div class="col-lg-6">
+                <div class="hero-img"><img class="img-card img-fluid" src="assets/images/card-expenses.png" alt="Image card" data-aos="fade-down" data-aos-delay="600"><img class="img-main img-fluid rounded-4" src="assets/images/hero-img-1-min.jpg" alt="Hero Image" data-aos="fade-in" data-aos-delay="500"></div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </header>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const openBtn = document.getElementById("openMenu");
-        const closeBtn = document.getElementById("closeMenu");
-        const mobileMenu = document.getElementById("mobileMenu");
-
-        openBtn.addEventListener("click", () => {
-          mobileMenu.classList.remove("hidden");
-        });
-
-        closeBtn.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-        });
-      });
-    </script>
+          <!-- End Hero-->
+        </section>
+        <!-- End Hero-->
 
 
 
 
 
-        <section id="Home" >
+
+
+
+
+
+
+
+
+
+
+        <!-- <section id="Home" >
             <div class="relative isolate px-6 pt-14 lg:px-8">
-                <!-- fancy shapes -->
                 <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
                     aria-hidden="true">
                     <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-30 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72rem]"
@@ -184,11 +223,11 @@
               "></div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </div>
 
     <!-- tsparticles initialization -->
-    <script>
+    <!-- <script>
         (async () => {
             await tsParticles.load("tsparticles", {
                 fullScreen: { enable: false },
@@ -226,7 +265,7 @@
                 detectRetina: true
             });
         })();
-    </script>
+    </script> -->
 
 
     <!-- Hero
@@ -238,7 +277,50 @@
   </section> -->
 
     <!-- About -->
-    <section id="About" class="py-20 bg-black text-white">
+
+ <!-- ======= About =======-->
+        <section class="about__v4 sectionn" id="about">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 order-md-2">
+                <div class="row justify-content-end">
+                  <div class="col-md-11 mb-4 mb-md-0"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">About us</span>
+                    <h2 class="mb-4" data-aos="fade-up" data-aos-delay="100">Who We Are</h2>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                      <p>We are a team of experienced and qualified professionals committed to delivering expert financial and compliance services tailored to the needs of individuals, startups, and established businesses. </p>
+                      <p>Our core mission is to simplify complex tax, accounting, and statutory requirements, helping our clients stay compliant, organized, and focused on their growth.</p>
+                    </div>
+                    <h4 class="small fw-bold mt-4 mb-3" data-aos="fade-up" data-aos-delay="300">Why Choose Us</h4>
+                    <ul class="d-flex flex-row flex-wrap list-unstyled gap-3 features" data-aos="fade-up" data-aos-delay="400">
+                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Experienced team of Professionals</span></li>
+                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Reliable and timely filings</span></li>
+                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Personalized client service </span></li>
+                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Affordable pricing</span></li>
+                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">100% data confidentiality and compliance</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6"> 
+                <div class="img-wrap position-relative"><img class="img-fluid rounded-4" src="assets/images/about_2-min.jpg" alt="FreeBootstrap.net image placeholder" data-aos="fade-up" data-aos-delay="0">
+                  <div class="mission-statement p-4 rounded-4 d-flex gap-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mission-icon text-center rounded-circle"><i class="bi bi-lightbulb fs-4"></i></div>
+                    <div>
+                      <h3 class="text-uppercase fw-bold">Mission Statement</h3>
+                      <p class="fs-5 mb-0">Our focus is not just on numbers—but building long-term partnerships with our clients by adding value and reducing financial stress.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End About-->
+
+
+
+
+   <section id="About" class="py-20 bg-black text-white">
         <div class="container mx-auto px-4" style="opacity: 1;">
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/2" style="opacity: 1; transform: none;">
@@ -372,7 +454,7 @@
             });
         </script>
 
-    </section>
+    </section> 
 
 
 

@@ -56,6 +56,11 @@ body {
   max-width: 1000px;
   margin: auto;
 }
+.sectionn {
+  padding: 40px 20px;
+  /* max-width: 1000px; */
+  margin: auto;
+}
 
 .section-title {
   font-size: 2rem;
@@ -281,3 +286,193 @@ html {
         transition: 0.5s;
         margin-bottom: 1rem;
       }
+
+
+
+
+      /* navebar */
+      /* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+} */
+
+.navbar {
+  background: white !important;
+  padding: 1rem 2rem !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 50px !important;
+  margin: 0 auto !important;
+  max-width: 1200px !important;
+  position: fixed !important; /* ← changed from relative */
+  top: 20px !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  transition: transform 0.3s ease-in-out !important;
+}
+
+
+.nav-containerr {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.logo {
+  font-weight: bold !important;
+  font-size: 1.5rem !important;
+  color: #1e293b !important;
+}
+
+.logo span {
+  color: #0f172a !important;
+}
+
+.nav-links {
+  display: flex !important;
+  gap: 2rem !important;
+}
+
+.nav-links a {
+  text-decoration: none !important;
+  color: #0f172a !important;
+  font-weight: 500 !important;
+  transition: 0.3s !important;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #007bff !important;
+}
+
+.btn {
+  background-color: #007bff !important;
+  color: white !important;
+  border: none !important;
+  padding: 0.6rem 1.4rem !important;
+  border-radius: 9999px !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  transition: background 0.3s !important;
+}
+
+.btn:hover {
+  background-color: #0066cc !important;
+}
+
+.menu-icon {
+  display: none !important;
+  flex-direction: column !important;
+  cursor: pointer !important;
+  gap: 5px !important;
+  margin-left: 1rem !important;
+}
+
+.menu-icon span {
+  width: 25px !important;
+  height: 3px !important;
+  background-color: #333 !important;
+  border-radius: 3px !important;
+}
+ .navbar {
+  transition: transform 0.3s ease-in-out !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background: white !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    display: none !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+    padding: 1rem 0 !important;
+  }
+
+  .nav-links.active {
+    display: flex !important;
+  }
+
+  .menu-icon {
+    display: flex !important;
+  }
+}
+
+
+
+/* .hero */
+.hero__v6 {
+  padding: 10rem 0 !important;
+}
+.hero__v6 .hero-subtitle {
+  background: color-mix(in srgb, var(--bs-secondary), transparent 70%);
+  color: var(--bs-primary);
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  margin-bottom: 10px;
+}
+
+.hero__v6 .hero-title {
+  font-size: 48px;
+}
+@media (max-width: 1199.98px) {
+  .hero__v6 .hero-title {
+    font-size: 40px;
+  }
+}
+@media (max-width: 991.98px) {
+  .hero__v6 .hero-title {
+    font-size: 30px;
+  }
+}
+.hero__v6 .logos .logos-title {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: color-mix(in srgb, var(--bs-primary), transparent 10%);
+}
+
+.hero__v6 .logos img {
+  width: 140px;
+}
+.hero__v6 .hero-img {
+  position: relative;
+}
+.hero__v6 .hero-img .img-main {
+  position: relative;
+  z-index: 9;
+}
+.hero__v6 .hero-img .img-card {
+  z-index: 10;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 15px 40px 0 rgba(var(--bs-black-rgb), 0.1);
+          box-shadow: 0 15px 40px 0 rgba(var(--bs-black-rgb), 0.1);
+  position: absolute;
+  max-width: 280px;
+  bottom: -40px;
+  left: -60px;
+}
+@media (max-width: 991.98px) {
+  .hero__v6 .hero-img .img-card {
+    left: 10px;
+    max-width: 380px;
+  }
+}
+@media (max-width: 575.98px) {
+  .hero__v6 .hero-img .img-card {
+    left: 10px;
+    max-width: 280px;
+  }
+}
+
