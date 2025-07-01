@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Services Section</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .service-card {
+        padding: 2em 1.5em;
+        background: linear-gradient(#ffffff 50%, #2c7bfe 50%);
+        background-size: 100% 200%;
+        background-position: 0 2.5%;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+        transition: 0.5s;
+        cursor: pointer;
+      }
+
+      .service-card:hover {
+        background-position: 0 100%;
+      }
+
+      .service-card:hover .service-icon {
+        background-color: #ffffff;
+        color: #2c7bfe;
+      }
+
+      .service-card:hover h3 {
+        color: #ffffff;
+      }
+
+      .service-card:hover p {
+        color: #f0f0f0;
+      }
+
+      .service-icon {
+        background-color: #2c7bfe;
+        font-size: 1.5rem;
+        height: 3rem;
+        width: 3rem;
+        display: grid;
+        place-items: center;
+        border-radius: 9999px;
+        color: white;
+        transition: 0.5s;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <section class="py-16 px-4 sm:px-6 lg:px-20 bg-white">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+        Our Services
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-file-invoice-dollar"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800">Tax Consultancy</h3>
+          <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+            • Income Tax Return Filing (Individuals, Firms, Companies)<br>
+            • Tax Planning & Advisory<br>
+            • Advance Tax Computation
+          </p>
+        </div>
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800">Accounting & Bookkeeping</h3>
+          <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+            • Monthly/Quarterly/Annual Bookkeeping<br>
+            • Financial Statement Preparation<br>
+            • Cloud-Based Accounting (Tally, Zoho, QuickBooks)
+          </p>
+        </div>
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800">GST Services</h3>
+          <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+            • GST Registration<br>
+            • GSTR-1, GSTR-3B, Annual Filing<br>
+            • Reconciliation with GSTR-2B / 2A<br>
+            • GST Advisory & Notices Handling
+          </p>
+        </div>
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-percent"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800">TDS Compliance</h3>
+          <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+            • Monthly TDS Return Filing (24Q, 26Q)<br>
+            • TDS Payment Support<br>
+            • TDS Correction & Notice Handling
+          </p>
+        </div>
+        <!-- Service 5 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800">Payroll & HR Services</h3>
+          <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+            • Monthly Payroll Processing<br>
+            • Payslip Generation & Salary Structuring<br>
+            • PF, ESI, PT Returns Filing<br>
+            • Labor Law Compliance
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

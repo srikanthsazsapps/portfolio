@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAMAT Consulting</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@latest/tsparticles.engine.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@latest/tsparticles.min.js"></script>
+
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+
+</head>
+
+<body class="bg-white">
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <!-- logo here if needed -->
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button type="button" id="openMenu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Open main menu</span>
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a href="#Home" class="text-sm font-semibold text-gray-900">Home</a>
+          <a href="#About" class="text-sm font-semibold text-gray-900">About</a>
+          <a href="#Services" class="text-sm font-semibold text-gray-900">Our Services</a>
+          <a href="#Pricing" class="text-sm font-semibold text-gray-900">Pricing</a>
+          <a href="#contact" class="text-sm font-semibold text-gray-900">Contact</a>
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <!-- optional login -->
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div class="lg:hidden hidden" id="mobileMenu" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 z-50 bg-black/20"></div>
+        <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Your Company</span>
+              <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+            </a>
+            <button type="button" id="closeMenu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
+              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="#Home" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Home</a>
+                <a href="#About" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">About</a>
+                <a href="#Services" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Our Services</a>
+                <a href="#Pricing" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Pricing</a>
+                <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Contact</a>
+              </div>
+              <div class="py-6">
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const openBtn = document.getElementById("openMenu");
+        const closeBtn = document.getElementById("closeMenu");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        openBtn.addEventListener("click", () => {
+          mobileMenu.classList.remove("hidden");
+        });
+
+        closeBtn.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+    </script>
+
+
+
+
+
+        <section id="Home" >
+            <div class="relative isolate px-6 pt-14 lg:px-8">
+                <!-- fancy shapes -->
+                <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+                    aria-hidden="true">
+                    <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-30 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72rem]"
+                        style="
+                clip-path: polygon(
+                  74.1% 44.1%,
+                  100% 61.6%,
+                  97.5% 26.9%,
+                  85.5% 0.1%,
+                  80.7% 2%,
+                  72.5% 32.5%,
+                  60.2% 62.4%,
+                  52.4% 68.1%,
+                  47.5% 58.3%,
+                  45.2% 34.5%,
+                  27.5% 76.7%,
+                  0.1% 64.9%,
+                  17.9% 100%,
+                  27.6% 76.8%,
+                  76.1% 97.7%,
+                  74.1% 44.1%
+                );
+              "></div>
+                </div>
+
+                <div class="mx-auto max-w-2xl py-32 sm:py-48">
+                    <div class="text-center">
+                        <h1
+                            class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl opacity-0 translate-y-8 animate-fade-slide">
+                            Simplifying Tax, Accounting & Compliance for Your Growth
+                        </h1>
+                        <p
+                            class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 opacity-0 translate-y-8 animate-fade-slide delay-200">
+                            Your reliable partner for tax filing, accounting, payroll, and
+                            compliance — so you can focus on your business.
+                        </p>
+                        <div
+                            class="mt-10 flex items-center justify-center gap-x-6 opacity-0 translate-y-8 animate-fade-slide delay-400">
+                            <a href="#"
+                                class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Request
+                                a Consultation</a>
+                            <a href="#"
+                                class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">View
+                                Services</a>
+                            <a href="#" class="text-sm/6 font-semibold text-gray-900">Learn more <span
+                                    aria-hidden="true">→</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+                    aria-hidden="true">
+                    <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72rem]"
+                        style="
+                clip-path: polygon(
+                  74.1% 44.1%,
+                  100% 61.6%,
+                  97.5% 26.9%,
+                  85.5% 0.1%,
+                  80.7% 2%,
+                  72.5% 32.5%,
+                  60.2% 62.4%,
+                  52.4% 68.1%,
+                  47.5% 58.3%,
+                  45.2% 34.5%,
+                  27.5% 76.7%,
+                  0.1% 64.9%,
+                  17.9% 100%,
+                  27.6% 76.8%,
+                  76.1% 97.7%,
+                  74.1% 44.1%
+                );
+              "></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- tsparticles initialization -->
+    <script>
+        (async () => {
+            await tsParticles.load("tsparticles", {
+                fullScreen: { enable: false },
+                background: { color: "#ffffff00" },
+                particles: {
+                    number: { value: 50, density: { enable: true, area: 800 } },
+                    color: { value: "#6366f1" }, // Tailwind indigo-600
+                    shape: { type: "circle" },
+                    opacity: { value: 0.4 },
+                    size: { value: { min: 1, max: 5 } },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: "none",
+                        outModes: { default: "out" }
+                    },
+                    links: {
+                        enable: true,
+                        distance: 150,
+                        color: "#6366f1",
+                        opacity: 0.3,
+                        width: 1
+                    }
+                },
+                interactivity: {
+                    events: {
+                        onHover: { enable: true, mode: "repulse" },
+                        onClick: { enable: true, mode: "push" }
+                    },
+                    modes: {
+                        repulse: { distance: 100 },
+                        push: { quantity: 4 }
+                    }
+                },
+                detectRetina: true
+            });
+        })();
+    </script>
+
+
+    <!-- Hero
+  <section class="hero">
+    <h1 class="hero-title">Simplifying Tax, Accounting & Compliance for Your Growth</h1>
+    <p class="hero-subtitle">Your reliable partner for tax filing, accounting, payroll, and compliance — so you can focus on your business.</p>
+    <a href="#contact" class="btn-primary">Request a Consultation</a>
+    <a href="#services" class="btn-secondary">View Services</a>
+  </section> -->
+
+    <!-- About -->
+    <section id="About" class="py-20 bg-black text-white">
+        <div class="container mx-auto px-4" style="opacity: 1;">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2" style="opacity: 1; transform: none;">
+                    <div class="lg:w-1/2">
+        <div class="rounded-lg overflow-hidden flex justify-center items-center animate-float">
+          <img 
+            src="/assets/images/7876908c-699b-48d1-a683-3c720e3f1921.png    "
+            alt="Professional Team"
+            class="rounded-lg object-cover w-full h-auto max-h-[400px]" />
+        </div>
+      </div>
+                </div>
+                <div class="lg:w-1/2" style="opacity: 1;">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6" style="opacity: 1; transform: none;">Who <span
+                            class="text-blue-500">
+                            We Are</h2>
+
+                    <p class="text-gray-300 mb-6" style="opacity: 1; transform: none;">We are a team of experienced and
+                        qualified professionals committed to delivering expert financial and compliance services
+                        tailored to the needs of individuals, startups, and established businesses. Our core mission is
+                        to simplify complex tax, accounting, and statutory requirements, helping our clients stay
+                        compliant, organized, and focused on their growth.
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6" style="opacity: 1; transform: none;">Why <span
+                            class="text-blue-500">
+
+                            Choose Us</span></h2>
+
+                    <div class="space-y-3 mb-8" style="opacity: 1;">
+                        <div class="flex items-start gap-3" style="opacity: 1; transform: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-check-circle2 h-6 w-6 text-blue-500 flex-shrink-0 mt-0.5">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg>
+                            <span class="text-gray-300">Experienced team of Professionals
+                        </div>
+                        <div class="flex items-start gap-3" style="opacity: 1; transform: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-check-circle2 h-6 w-6 text-blue-500 flex-shrink-0 mt-0.5">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg><span class="text-gray-300"> Reliable and timely filings </span>
+                        </div>
+                        <div class="flex items-start gap-3" style="opacity: 1; transform: none;"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-check-circle2 h-6 w-6 text-blue-500 flex-shrink-0 mt-0.5">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg><span class="text-gray-300">Personalized client service</span>
+                        </div>
+                        <div class="flex items-start gap-3" style="opacity: 1; transform: none;"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-check-circle2 h-6 w-6 text-blue-500 flex-shrink-0 mt-0.5">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg><span class="text-gray-300"> Affordable pricing </span>
+                        </div>
+                        <div class="flex items-start gap-3" style="opacity: 1; transform: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-check-circle2 h-6 w-6 text-blue-500 flex-shrink-0 mt-0.5">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg><span class="text-gray-300">100% data confidentiality and compliance </span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-8" style="opacity: 1; transform: none;">Our focus is not just on
+                        numbers—but building long-term partnerships with our clients by adding value and reducing
+                        financial stress.</p>
+                    <!-- <div tabindex="0" style="opacity: 1; transform: none;">
+                <a
+                  class="bg-blue-500 hover:bg-blue-600 text-black font-semibold py-3 px-8 rounded-md transition-all duration-300"
+                  href="/about" data-discover="true">Learn More</a>
+                </div> -->
+                </div>
+            </div>
+        </div>
+        <style>
+            .animate-float {
+                animation: float 4s ease-in-out infinite;
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-10px);
+                }
+
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+        </style>
+
+
+
+        <script>
+            // Function to rotate an element
+            function rotateElement(el, initialAngle, speed) {
+                let angle = initialAngle;
+                setInterval(() => {
+                    angle += speed;
+                    el.style.transform = `scale(1.08) rotate(${angle}deg)`;
+                }, 30);
+            }
+
+            // Wait until the DOM is loaded
+            document.addEventListener("DOMContentLoaded", () => {
+                const rotatingBlueDiv = document.querySelector(".bg-blue-500.rounded-lg.hidden.md\\:block");
+                const rotatingBorderDiv = document.querySelector(".border-blue-500.rounded-lg.hidden.md\\:block");
+
+                if (rotatingBlueDiv) {
+                    rotateElement(rotatingBlueDiv, 144, 1.5); // initial angle and speed
+                }
+
+                if (rotatingBorderDiv) {
+                    rotateElement(rotatingBorderDiv, 215, -1.2); // counter rotation
+                }
+            });
+        </script>
+
+    </section>
+
+
+
+ 
+    <!-- Services -->
+   <body class="bg-gray-100">
+    <section class="py-16 px-4 sm:px-6 lg:px-20 bg-white" id="Services">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+        Our Services
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-file-invoice-dollar"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800">Tax Consultancy</h3>
+          <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+            • Income Tax Return Filing (Individuals, Firms, Companies)<br>
+            • Tax Planning & Advisory<br>
+            • Advance Tax Computation
+          </p>
+        </div>
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800">Accounting & Bookkeeping</h3>
+          <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+            • Monthly/Quarterly/Annual Bookkeeping<br>
+            • Financial Statement Preparation<br>
+            • Cloud-Based Accounting (Tally, Zoho, QuickBooks)
+          </p>
+        </div>
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800">GST Services</h3>
+          <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+            • GST Registration<br>
+            • GSTR-1, GSTR-3B, Annual Filing<br>
+            • Reconciliation with GSTR-2B / 2A<br>
+            • GST Advisory & Notices Handling
+          </p>
+        </div>
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-percent"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800">TDS Compliance</h3>
+          <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+            • Monthly TDS Return Filing (24Q, 26Q)<br>
+            • TDS Payment Support<br>
+            • TDS Correction & Notice Handling
+          </p>
+        </div>
+        <!-- Service 5 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800">Payroll & HR Services</h3>
+          <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+            • Monthly Payroll Processing<br>
+            • Payslip Generation & Salary Structuring<br>
+            • PF, ESI, PT Returns Filing<br>
+            • Labor Law Compliance
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+
+   
+   
+    <!-- Pricing -->
+    <section class="section pricing" id="Pricing">
+        <h2 class="section-title">Pricing</h2>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Starter</th>
+                    <th>Business</th>
+                    <th>Premium</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Income Tax Filing</td>
+                    <td>₹1,000 onwards</td>
+                    <td>Custom</td>
+                    <td>Custom</td>
+                </tr>
+                <tr>
+                    <td>Monthly Accounting</td>
+                    <td>₹2,500/month</td>
+                    <td>₹5,000/month</td>
+                    <td>₹8,500/month</td>
+                </tr>
+                <tr>
+                    <td>GST Filing</td>
+                    <td>₹800/month</td>
+                    <td>₹1,500/month</td>
+                    <td>₹2,500/month</td>
+                </tr>
+                <tr>
+                    <td>Payroll (Up to 10 staff)</td>
+                    <td>₹1,000/month</td>
+                    <td>₹2,000/month</td>
+                    <td>₹3,500/month</td>
+                </tr>
+                <tr>
+                    <td>TDS Returns</td>
+                    <td>₹750/quarter</td>
+                    <td>₹1,500/quarter</td>
+                    <td>₹2,500/quarter</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="pricing-note">*Prices are indicative and subject to change based on complexity and turnover.</p>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-details">
+                <h3 class="subheading">Contact Details</h3>
+                <p>📍 Plot No.21, 2nd Floor, Rukmani Nagar, Perumbakkam, Chennai, Tamil Nadu 600100</p>
+                <p>📞 +91 91501 72421</p>
+                <p>📧 <a href="mailto:consult@samat.in">consult@samat.in</a></p>
+                <p>🌐 <a href="http://www.samat.in">www.samat.in</a></p>
+                <p>🕒 Mon–Sat | 10:00 AM – 6:30 PM</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Phone">
+                    <textarea placeholder="Message"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 SAMAT Consulting | All rights reserved
+    </footer>
+</body>
+
+</html>
